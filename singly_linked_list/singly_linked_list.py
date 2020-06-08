@@ -3,7 +3,14 @@ class LinkedList:
         self.head = None
         self.tail = None
         self.append = self.add_to_tail
-        self.pop = self.remove_tail
+
+    def pop(self, index=None):
+        if index is None:
+            return self.remove_tail()
+        elif index == 0:
+            return self.remove_head()
+        else:
+            raise Exception("index not supported")
 
     def __repr__(self):
         node = self.head
@@ -99,5 +106,3 @@ class Node:
 
     def __repr__(self):
         return self.value
-
-
